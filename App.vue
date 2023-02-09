@@ -22,6 +22,11 @@
 	page {
 		background-color: #f5f5f5;
 	}
+	
+	
+	:deep(uni-nav-bar .uni-navbar-btn-text text) {
+		font-size: 30rpx !important;
+	}
 
 	/* #endif */
 	.example-info {
