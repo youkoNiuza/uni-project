@@ -1,11 +1,29 @@
 {
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "首页",
-			"navigationStyle": "custom"
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": 
+			{
+				"navigationBarTitleText": "首页"
+			}
 		}
-	}    ,{
+        ,{
+            "path" : "pages/tool/tool",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "创新工具"
+            }
+            
+        }
+        ,{
+            "path" : "pages/principle/principle",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "创新原理"
+            }
+            
+        }    
+		,{
             "path" : "pages/me/me",
             "style" :                                                                                    
             {
@@ -14,20 +32,176 @@
             
         }
     ],
+	"subPackages": [
+		{
+			"root": "subpackages/search",
+			"pages": [
+				{
+					"path" : "search-result/search-result",
+					"style" : {
+						"navigationBarTitleText": "搜索结果"
+					}
+				
+				}
+			]
+		},
+		{
+			"root": "subpackages/triz",
+			"pages": [
+				{
+					"path": "detail/detail",
+					"style": {
+						"navigationBarTitleText": "TRIZ理论-详情页",
+						"usingComponents": {
+							"wemark": "../../../wxcomponents/wemark/wemark"
+						}
+					}
+				},
+				{
+					"path": "outline/outline",
+					"style": {
+						"navigationBarTitleText": "TRIZ理论-大纲"
+					}
+				}
+			]
+		},
+		{
+			"root": "subpackages/tools",
+			"pages": [
+				{
+					"path" : "contradiction-analysis/contradiction-analysis",
+					"style" : {
+							"navigationBarTitleText": "矛盾矩阵分析"
+					}
+				},
+				{
+					"path" : "engineering-parameter/engineering-parameter",
+					"style" : {
+							"navigationBarTitleText": "39个工程参数"
+					}
+				},
+				{
+					"path" : "standard-solution/standard-solution",
+					"style" : {
+							"navigationBarTitleText": "76个标准解"
+					}
+				},
+				{
+					"path" : "effect-library/effect-library",
+					"style" : {
+							"navigationBarTitleText": "科学效应库"
+					}
+				},
+				{
+                    "path" : "contradiction-analysis/contradiction-analysis-result/contradiction-analysis-result",
+                    "style" : {
+						"navigationBarTitleText": "矛盾分析查询结果"
+					}
+                },
+				{
+                    "path" : "standard-solution/standard-solution-detail/standard-solution-detail",
+                    "style" : {
+						"navigationBarTitleText": "标准解分类详情"
+					}
+                },
+				{
+                    "path" : "effect-library/effect-library-query/effect-library-query",
+                    "style" : {
+						"navigationBarTitleText": "效应库查询"
+					}
+                },
+				{
+                    "path" : "effect-library/effect-library-query-result/effect-library-query-result",
+                    "style" :{
+						"navigationBarTitleText": "查询结果"
+					}
+                }
+            ]
+		},
+		{
+			"root": "subpackages/principles",
+			"pages": [
+				{
+					"path" : "detail/detail",
+					"style" : {
+							"navigationBarTitleText": "创新原理及实例"
+					}
+				}
+            ]
+		},
+		{
+			"root": "subpackages/me",
+			"pages": [
+				{
+					"path" : "user-info/user-info",
+					"style" : {
+							"navigationBarTitleText": "个人信息"
+					}
+				},
+				{
+					"path" : "about/about",
+					"style" : {
+							"navigationBarTitleText": "关于\"工程创新\""
+					}
+				}
+		    ]
+		}
+	],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["subpackages/triz", "subpackages/search"]
+		},
+		"pages/tool/tool": {
+			"network": "all",
+			"packages": ["subpackages/tools"]
+		},
+		"pages/principle/principle": {
+			"network": "all",
+			"packages": ["subpackages/principles"]
+		},
+		"pages/me/me": {
+			"network": "all",
+			"packages": ["subpackages/me"]
+		},
+		"subpackages/tools/contradiction-analysis/contradiction-analysis": {
+			"network": "all",
+			"packages": ["subpackages/principles"]
+		}
+	},
 	"tabBar": {
+		"color": "#bababa",
+		"selectedColor": "#fff",
+		"fontSize": "16rpx",
+		"borderStyle": "white",
+		"backgroundColor": "#1165ba",
 	    "list": [{
 	      "pagePath": "pages/index/index",
-	      "text": "首页"
+	      "text": "首页",
+		  "iconPath": "static/images/home.png",
+		  "selectedIconPath": "static/images/home_selected.png"
+	    },{
+	      "pagePath": "pages/tool/tool",
+	      "text": "工具",
+		  "iconPath": "static/images/tool.png",
+		  "selectedIconPath": "static/images/tool_selected.png"
+	    },{
+	      "pagePath": "pages/principle/principle",
+	      "text": "原理",
+		  "iconPath": "static/images/principle.png",
+		  "selectedIconPath": "static/images/principle_selected.png"
 	    },{
 	      "pagePath": "pages/me/me",
-	      "text": "我的"
+	      "text": "我的",
+		  "iconPath": "static/images/me.png",
+		  "selectedIconPath": "static/images/me_selected.png"
 	    }]
 	  },
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#1165BA",
-		"backgroundColor": "#1165BA",
+		"backgroundColor": "#fff",
 		
 		"app-plus": {
 			"background": "#efeff4"
